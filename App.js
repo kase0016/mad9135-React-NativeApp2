@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import {
   FlatList,
   SafeAreaView,
@@ -9,7 +8,6 @@ import {
 } from "react-native";
 import ImageBlock from "./components/imageBlock";
 import axios from "axios";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -64,7 +62,7 @@ export default function App() {
               setUsers((prevUsers) => [...prevUsers, response.data]);
             })
             .catch((e) => {
-              console.error("Error fetching data: ", e.message, e);
+              console.error(e.message);
             });
         }}
       >
